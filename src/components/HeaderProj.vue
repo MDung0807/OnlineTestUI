@@ -51,7 +51,7 @@
           <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
         </PopoverGroup>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+          <a class="text-sm font-semibold leading-6 text-gray-900" @click="Login">Login <span aria-hidden="true">&rarr;</span></a>
         </div>
       </nav>
       <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -116,7 +116,6 @@
     XMarkIcon,
   } from '@heroicons/vue/24/outline'
   import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
-  
   const products = [
     { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
     { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
