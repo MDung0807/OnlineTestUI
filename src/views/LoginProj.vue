@@ -151,7 +151,11 @@
   </script>
 
   <script>
+    import loginService from "@/services/LoginService";
+
     export default {
-        name: 'LoginProj'
+        name: 'LoginProj',
     }
-</script>
+    loginService.prototype.login()
+
+  </script>
