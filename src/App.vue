@@ -7,8 +7,8 @@
 
 <script>
 
-import HeaderProj from './components/HeaderProj.vue';
-import FooterProj from './components/FooterProj.vue';
+import HeaderProj from './components/Header.vue';
+import FooterProj from './components/Footer.vue';
 export default {
   name: 'App',
   components: {
