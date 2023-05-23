@@ -13,10 +13,11 @@
 
         <!-- Right column container with form -->
         <div class="md:w-8/12 lg:ml-6 lg:w-5/12">
-          <form>
+          <form @submit="login($event)">
             <!-- Email input -->
             <div class="relative mb-6" data-te-input-wrapper-init>
               <input
+                  v-model="username"
                   type="text"
                   class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput3"
@@ -31,6 +32,7 @@
             <!-- Password input -->
             <div class="relative mb-6" data-te-input-wrapper-init>
               <input
+                  v-model="password"
                   type="password"
                   class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput33"
@@ -149,13 +151,26 @@
 
   initTE({ Input, Ripple });
   </script>
-
   <script>
-    import loginService from "@/services/LoginService";
-
+  import AuthService from '../services/AuthService.js'
     export default {
         name: 'LoginProj',
+        data(){
+          return {
+              username:'',
+              password:'',
+          }
+        },
+        methods: {
+          login(){
+            const data = {
+            username:this.username ,
+            password: this.password,
     }
-    loginService.prototype.login()
+            AuthService.login(data)
+          }
+        },
+    }
 
+    
   </script>

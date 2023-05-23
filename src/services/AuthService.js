@@ -2,11 +2,11 @@ import axios from "axios";
 import BaseAPI from "@/services/BaseAPI";
 
 class LoginService {
-    login(){
+    login(data){
         console.log("dang login")
         console.log(BaseAPI.API+loginAPI)
-        console.log(dataLogin)
-        axios.post(BaseAPI.API+ loginAPI, dataLogin)
+        console.log(data)
+        axios.post(BaseAPI.API+ loginAPI, data)
             .then(response => {console.log(response.data)})
             .catch(err => {
                 console.log(err)
@@ -14,8 +14,4 @@ class LoginService {
     }
 }
 const loginAPI = 'auth/login'
-const dataLogin={
-    username:'tanntn29',
-    password: 'Tan1234@'
-}
 export default LoginService;
