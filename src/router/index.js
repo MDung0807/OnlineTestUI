@@ -5,6 +5,7 @@ import HomeProj from '../views/Home.vue'
 import NotFound from '../views/NotFound.vue'
 import Register from '../views/Register.vue'
 import ImageBox from '../components/ImageBox.vue'
+import FormInput from '../components/Form.vue'
 
 const routes= [
     {
@@ -29,6 +30,10 @@ const routes= [
     {
       path: '/image',
       component: ImageBox
+    },
+    {
+      path:'/form',
+      component: FormInput 
     }
 ]
 
