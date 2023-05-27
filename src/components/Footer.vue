@@ -1,7 +1,7 @@
 <template class="">
     <footer>
         <div class="flex">
-            <p class="mx-auto flex py-10 text-indigo-800">Custom by MDung</p>
+            <a target="_blank" class="mx-auto flex py-10 text-indigo-800" href="https://github.com/MDung0807"> <p >Custom by MDung0807</p> </a>
         </div>
     </footer>
 </template>

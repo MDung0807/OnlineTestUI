@@ -6,6 +6,7 @@ import NotFound from '../views/NotFound.vue'
 import Register from '../views/Register.vue'
 import ImageBox from '../components/ImageBox.vue'
 import FormInput from '../components/Form.vue'
+import TestProj from '../views/Test.vue'
 
 const routes= [
     {
@@ -34,6 +35,10 @@ const routes= [
     {
       path:'/form',
       component: FormInput 
+    },
+    {
+      path:'/test',
+      component: TestProj
     }
 ]
 

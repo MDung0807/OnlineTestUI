@@ -8,7 +8,7 @@ class LoginService {
         axios.post(BaseAPI.API+ loginAPI, data)
             .then(response => {console.log(response.data)})
             .catch(response => {
-                response
+                console.log(response.data)
             })
     }
     register(data){
