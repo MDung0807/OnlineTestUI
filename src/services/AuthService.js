@@ -21,8 +21,24 @@ class LoginService {
         return message
     }
     async register(data){
-        responseEntity = await BaseAPI.sendRequest(registerAPI, data)
-            return responseEntity.data
+        const formData = new FormData();
+        formData.append("username", data.username)
+        formData.append('password', data.password)
+        formData.append("firstName", data.firstName)
+        formData.append("lastName", data.lastName)
+        formData.append("email", data.email)
+        formData.append("phoneNumber", data.phoneNumber)
+        formData.append("gender", data.gender)
+        formData.append("avatar", data.avatar)
+
+        try {
+            responseEntity = await BaseAPI.sendRequest(registerAPI, formData)
+            message = responseEntity.data
+        }
+        catch (e){
+            console.log(e)
+        }
+        return message
     }
     async resetPassword(data){
         return await  BaseAPI.sendRequest(resetPasswordAPI, data);
