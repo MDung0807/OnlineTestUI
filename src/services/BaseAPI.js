@@ -1,4 +1,5 @@
 import axios from "axios";
+import router from "@/router";
 
 class BaseAPI {
     async sendRequest(url, objectData){
@@ -6,7 +7,9 @@ class BaseAPI {
             .then(response => {
                 return response.data
             })
-            .catch(response => console.log(response))
+            .catch(()=>{
+                router.push('/test')
+            })
     }
 }
 

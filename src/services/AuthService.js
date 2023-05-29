@@ -2,14 +2,20 @@ import BaseAPI from "@/services/BaseAPI";
 
 class LoginService {
     async login(data){
-        responseEntity =  await BaseAPI.sendRequest(loginAPI, data)
-        if (!responseEntity.error){
-            localStorage.setItem('userId', responseEntity.data.id)
-            localStorage.setItem('token', responseEntity.data.token)
-            message = null
+        try{
+            responseEntity =  await BaseAPI.sendRequest(loginAPI, data)
+            if (!responseEntity.error){
+                localStorage.setItem('userId', responseEntity.data.id)
+                localStorage.setItem('token', responseEntity.data.token)
+                message = null
+            }
+            else {
+                message = responseEntity.data.message
+            }
         }
-        else {
-            message = responseEntity.data
+        catch(e) {
+            message = 'err'
+            console.log(e)
         }
 
         return message
@@ -26,5 +32,5 @@ const loginAPI = 'auth/login'
 const registerAPI = 'auth/register'
 const resetPasswordAPI = 'auth/reset'
 let responseEntity
-let message
+let message=''
 export default new LoginService;
