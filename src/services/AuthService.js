@@ -1,31 +1,30 @@
-import axios from "axios";
 import BaseAPI from "@/services/BaseAPI";
 
 class LoginService {
-    login(data){
-        console.log(BaseAPI.API+loginAPI)
-        console.log(data)
-        axios.post(BaseAPI.API+ loginAPI, data)
-            .then(response => {console.log(response.data)})
-            .catch(response => {
-                console.log(response.data)
-            })
-    }
-    register(data){
-        console.log(BaseAPI.API+registerAPI)
-        axios.post(BaseAPI.API+registerAPI, data)
-        .then(response => {console.log(response.data)})
-        .catch(err => {console.log(err)})
-    }
+    async login(data){
+        responseEntity =  await BaseAPI.sendRequest(loginAPI, data)
+        if (!responseEntity.error){
+            localStorage.setItem('userId', responseEntity.data.id)
+            localStorage.setItem('token', responseEntity.data.token)
+            message = null
+        }
+        else {
+            message = responseEntity.data
+        }
 
-    resetPassword(data){
-        console.log(BaseAPI.API+resetPasswordAPI)
-        axios.post(BaseAPI.API+resetPasswordAPI, data)
-        .then(response => {console.log(response.data)})
-        .catch(err => {console.log(err)})
+        return message
+    }
+    async register(data){
+        responseEntity = await BaseAPI.sendRequest(registerAPI, data)
+            return responseEntity.data
+    }
+    async resetPassword(data){
+        return await  BaseAPI.sendRequest(resetPasswordAPI, data);
     }
 }
 const loginAPI = 'auth/login'
 const registerAPI = 'auth/register'
 const resetPasswordAPI = 'auth/reset'
+let responseEntity
+let message
 export default new LoginService;
