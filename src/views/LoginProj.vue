@@ -160,11 +160,11 @@
           async login(){
             let data = this.loginData ;
             let mess= await AuthService.login(data);
-            if (mess ===''){
+            if (mess.error === false){
               await router.push('/')
             }
-            else {
-              document.getElementById("messageResponse").innerHTML =mess
+            else if (mess.error){
+              document.getElementById("messageResponse").innerHTML =mess.data.message
             }
           }
         },

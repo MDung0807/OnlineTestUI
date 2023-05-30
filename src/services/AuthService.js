@@ -1,4 +1,5 @@
 import BaseAPI from "@/services/BaseAPI";
+import {NOT_CONNECT} from "@/utils/Contrain";
 
 class LoginService {
     async login(data){
@@ -7,15 +8,19 @@ class LoginService {
             if (!responseEntity.error){
                 localStorage.setItem('userId', responseEntity.data.id)
                 localStorage.setItem('token', responseEntity.data.token)
-                message = null
+                message = responseEntity
             }
             else {
-                message = responseEntity.data.message
+                message = responseEntity
             }
         }
         catch(e) {
-            message = 'err'
-            console.log(e)
+            message ={
+                error:true,
+                data:{
+                    message: NOT_CONNECT
+                }
+            }
         }
 
         return message
@@ -48,5 +53,8 @@ const loginAPI = 'auth/login'
 const registerAPI = 'auth/register'
 const resetPasswordAPI = 'auth/reset'
 let responseEntity
-let message=''
+let message ={
+    error :Boolean,
+    data : Object
+}
 export default new LoginService;
