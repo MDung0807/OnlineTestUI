@@ -8,12 +8,12 @@ class TopicService{
         try {
             const response = await BaseAPI.getData(url, params)
             if (!response.error){
-                console.log("response", response.data)
                 return response.data
             }
             return null
         }
-        catch {
+        catch (e){
+            console.log(e)
             return null
         }
     }

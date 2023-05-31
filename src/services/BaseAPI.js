@@ -4,7 +4,7 @@ class BaseAPI {
     async sendRequest(url, objectData){
         return await axios.post(API + url, objectData, {
             headers: {
-                'Authorization': "Bearer "+ localStorage.getItem('token')
+                Authorization: "Bearer "+ localStorage.getItem('token')
             }
         })
             .then(response => {
@@ -29,20 +29,21 @@ class BaseAPI {
 
     async getData(url, params){
         console.log(params)
+        console.log("Token: ",localStorage.getItem('token'))
          return await axios.get(API+url,  {
+             // headers: {
+             //     Authorization: "Bearer "+ localStorage.getItem('token')
+             // },
              params: {
-                 subjectId:2
+                 subjectId: 2
              },
-             headers:{
-                 'Authorization': "Bearer "+ localStorage.getItem('token'),
-             }
+             timeout: 5000
+
          })
              .then(response => {
-                 console.log(response)
                  return response.data
              })
              .catch(reason =>{
-                 console.log('ex', reason)
                  return reason.response.data
              })
     }
