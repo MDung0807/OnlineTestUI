@@ -2,11 +2,8 @@ import BaseAPI from "@/services/BaseAPI";
 
 class TopicService{
     async getAllTopicBySubjectId(data){
-        const params ={
-        subjectId: parseInt(data)
-        }
         try {
-            const response = await BaseAPI.getData(url, params)
+            const response = await BaseAPI.getData(url,'subjectId', data)
             if (!response.error){
                 return response.data
             }

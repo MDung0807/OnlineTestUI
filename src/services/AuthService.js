@@ -4,7 +4,7 @@ import {NOT_CONNECT} from "@/utils/Contrain";
 class LoginService {
     async login(data){
         try{
-            responseEntity =  await BaseAPI.sendRequest(loginAPI, data)
+            responseEntity =  await BaseAPI.createData(loginAPI, data)
             if (!responseEntity.error){
                 localStorage.setItem('userId', responseEntity.data.id)
                 localStorage.setItem('token', responseEntity.data.token)

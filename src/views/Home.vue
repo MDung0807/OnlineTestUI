@@ -2,12 +2,12 @@
     <SliderProj value="90"></SliderProj>
     <img src="../assets/images/study.jpg" alt="Đâny akf ảnh" >
   <div class="grid grid-cols-3 gap-4 place-items-center">
-    <div v-for="topic in topics"
-          :key="topic.id">
+    <div v-for="subject in subjects"
+          :key="subject.id">
       <div>
         <RenderImage
-                      :image="topic.image"
-                      :name="topic.name"></RenderImage>
+                      :image="subject.image"
+                      :name="subject.name"></RenderImage>
       </div>
     </div>
 
@@ -16,8 +16,9 @@
   
   <script>
   import SliderProj from '../components/SlideProj.vue'
-  import TopicService from '../services/TopicService'
   import RenderImage from "@/components/RenderImage";
+  import {getAllSubject} from "@/services/SubjectService";
+
   export default {
     name: 'HomeP',
     components: {
@@ -26,17 +27,18 @@
     },
     data(){
       return{
-        topics: []
+        subjects: []
       }
     },
     methods:{
-      async getAllTopicBySubjectId(data){
-        this.topics = await TopicService.getAllTopicBySubjectId(data)
-        console.log(this.topics)
+      async getAllSubject(){
+        let response = await getAllSubject()
+        this.subjects = response.data
+        console.log("Home ", this.subjects)
       }
     },
     mounted() {
-      this.getAllTopicBySubjectId(2)
+      this.getAllSubject()
     }
   }
 
