@@ -12,7 +12,7 @@ export default {
     return {
       subject :{
         subjectId: null,
-        name: 'hka',
+        name: '',
         image: '',
         topics: []
       }

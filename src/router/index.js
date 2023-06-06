@@ -8,6 +8,7 @@ import ImageBox from '../components/ImageBox.vue'
 import FormInput from '../components/Form.vue'
 import TestProj from '../views/Test.vue'
 import SubjectView from "@/components/SubjectView";
+import ProfileClient from '../views/ProfileClient.vue'
 
 const routes= [
     {
@@ -45,6 +46,11 @@ const routes= [
         name: 'Subject',
         path: '/subject',
         component: SubjectView
+    },
+    {
+        name: 'ProfileClient',
+        path: '/profile',
+        component: ProfileClient
     }
 ]
 
