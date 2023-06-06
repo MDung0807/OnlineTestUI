@@ -11,5 +11,10 @@ export const getAllSubject = async () => {
     return response;
 }
 
+export const createSubject = async (data) => {
+    let response = await BaseAPI.createData(addSubject, data)
+    return response;
+}
 const subject = "subject";
 const subjectById = subject + "/id"
+const addSubject = subject+'/add'

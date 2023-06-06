@@ -9,6 +9,7 @@ import FormInput from '../components/Form.vue'
 import TestProj from '../views/Test.vue'
 import SubjectView from "@/components/SubjectView";
 import ProfileClient from '../views/ProfileClient.vue'
+import SubjectAdmin from '../views/admin/SubjectAdmin.vue'
 
 const routes= [
     {
@@ -51,6 +52,11 @@ const routes= [
         name: 'ProfileClient',
         path: '/profile',
         component: ProfileClient
+    },
+    {
+      path: '/admin/addSubject',
+      name: 'AddSubject',
+      component: SubjectAdmin
     }
 ]
 
