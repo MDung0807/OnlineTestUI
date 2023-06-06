@@ -1,8 +1,7 @@
 import BaseAPI from "@/services/BaseAPI";
 
 export const getSubject = async (id) =>{
-    let response = BaseAPI.getData(subject, 'subjectId', id)
-    console.log("KẾt quẩ trả về: ", response)
+    let response = BaseAPI.getData(subjectById, 'subjectId', id)
     return response
 }
 
@@ -13,3 +12,4 @@ export const getAllSubject = async () => {
 }
 
 const subject = "subject";
+const subjectById = subject + "/id"

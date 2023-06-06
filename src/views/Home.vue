@@ -3,11 +3,15 @@
     <img src="../assets/images/study.jpg" alt="Đâny akf ảnh" >
   <div class="grid grid-cols-3 gap-4 place-items-center">
     <div v-for="subject in subjects"
-          :key="subject.id">
+          :key="subject.subjectId">
       <div>
-        <RenderImage
-                      :image="subject.image"
-                      :name="subject.name"></RenderImage>
+        <router-view>
+          <router-link :to="{name: 'Subject', param: {subjectId: subject.subjectId}}">
+            <RenderImage
+              :image="subject.image"
+              :name="subject.name"></RenderImage>
+          </router-link>
+        </router-view>
       </div>
     </div>
 

@@ -18,6 +18,7 @@ const instance = ()=>{
 // }
 
 const responseSuccess = (response)=>{
+    console.log("Đây là response chính: ", response)
     return response.data
 }
 

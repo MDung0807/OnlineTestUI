@@ -20,7 +20,7 @@ class BaseAPI {
             }
         })
         try {
-            console.log( "Response nè: ", response)
+            return response
         }
         catch {
             console.log("Lỗi trả về nè: ", response)

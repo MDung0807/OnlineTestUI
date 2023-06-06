@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import ImageBox from '../components/ImageBox.vue'
 import FormInput from '../components/Form.vue'
 import TestProj from '../views/Test.vue'
+import SubjectView from "@/components/SubjectView";
 
 const routes= [
     {
@@ -39,6 +40,11 @@ const routes= [
     {
       path:'/test',
       component: TestProj
+    },
+    {
+        name: 'Subject',
+        path: '/subject',
+        component: SubjectView
     }
 ]
 
