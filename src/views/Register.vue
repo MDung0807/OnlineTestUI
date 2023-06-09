@@ -253,7 +253,7 @@
 
   <script>
   import AuthService from "@/services/AuthService";
-  import getImage from "@/utils/GetImage";
+    import getImage from "@/utils/GetImage";
   import router from "@/router";
   export default {
     name: 'RegisterProj',

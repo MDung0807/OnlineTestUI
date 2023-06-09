@@ -12,7 +12,10 @@ export const getAllSubject = async () => {
 }
 
 export const createSubject = async (data) => {
-    let response = await BaseAPI.createData(addSubject, data)
+    const formData = new FormData();
+    formData.append('name', data.name)
+    formData.append('image', data.image)
+    let response = await BaseAPI.createData(addSubject, formData)
     return response;
 }
 const subject = "subject";

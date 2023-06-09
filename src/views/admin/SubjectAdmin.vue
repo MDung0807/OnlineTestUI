@@ -6,15 +6,17 @@
                        @change="reviewImage"
                     type="file">
                 <img src="../../assets/images/noneAvatar.jpg"
-                      id="avatar"
+                      id="image"
                      class="h-12 w-12 text-gray-300" aria-hidden="false" />
         </form>
-        <button type="submit"></button>
+        <button type="submit"
+         @click="createSubject">Thêm môn học</button>
     </div>
 </template>
 
 <script>
 import { createSubject } from '@/services/SubjectService';
+import getImage from "@/utils/GetImage";
 
     export default {
         name: 'SubjectAdmin',
@@ -30,9 +32,23 @@ import { createSubject } from '@/services/SubjectService';
             }
         },
         methods: {
-            async createSubject (data){
+            async createSubject (){
+                this.getImage();
+                var data = {
+                    name: this.subject.name,
+                    image: this.subject.image
+                }
                 let response = await createSubject(data)
                 console.log(response)
+            },
+            getImage(){
+                this.subject.image =getImage(document.getElementById('image').__vnode.props)
+            },
+            reviewImage (){
+                var image = document.getElementById("inputFile").valueOf()
+                var file = image.files[0]
+
+                document.getElementById("image").src = URL.createObjectURL(file)
             }
         }
     }

@@ -37,7 +37,7 @@ class LoginService {
         formData.append("avatar", data.avatar)
 
         try {
-            responseEntity = await BaseAPI.sendRequest(registerAPI, formData)
+            responseEntity = await BaseAPI.createData(registerAPI, formData)
             message = responseEntity.data
         }
         catch (e){
