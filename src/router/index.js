@@ -10,6 +10,7 @@ import TestProj from '../views/Test.vue'
 import SubjectView from "@/components/SubjectView";
 import ProfileClient from '../views/ProfileClient.vue'
 import SubjectAdmin from '../views/admin/SubjectAdmin.vue'
+import HomeAdmin from '../views/admin/HomeAdmin.vue'
 
 const routes= [
     {
@@ -52,6 +53,11 @@ const routes= [
         name: 'ProfileClient',
         path: '/profile',
         component: ProfileClient
+    },
+    {
+      name: 'HomeAdmin',
+      path: '/admin',
+      component: HomeAdmin
     },
     {
       path: '/admin/addSubject',

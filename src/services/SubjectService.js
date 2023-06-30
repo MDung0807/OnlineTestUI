@@ -18,6 +18,12 @@ export const createSubject = async (data) => {
     let response = await BaseAPI.createData(addSubject, formData)
     return response;
 }
+
+export const getSubjectByUser = async(userId)=>{
+    let response = await BaseAPI.getData(SubjectByUser, 'userId', userId)
+    return response
+}
 const subject = "subject";
 const subjectById = subject + "/id"
 const addSubject = subject+'/add'
+const SubjectByUser = subject + '/getSubjectByUserId'

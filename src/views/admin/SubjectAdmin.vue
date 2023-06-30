@@ -16,7 +16,7 @@
 
 <script>
 import { createSubject } from '@/services/SubjectService';
-import getImage from "@/utils/GetImage";
+import getImageUtil from "@/utils/GetImageUtil";
 
     export default {
         name: 'SubjectAdmin',
@@ -42,7 +42,7 @@ import getImage from "@/utils/GetImage";
                 console.log(response)
             },
             getImage(){
-                this.subject.image =getImage(document.getElementById('image').__vnode.props)
+                this.subject.image =getImageUtil(document.getElementById('image').__vnode.props)
             },
             reviewImage (){
                 var image = document.getElementById("inputFile").valueOf()

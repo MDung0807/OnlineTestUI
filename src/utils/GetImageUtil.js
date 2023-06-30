@@ -1,4 +1,4 @@
-export default function getImage(object){
+export default function getImageUtil(object){
     let dataUrl = object.src.split(',')
     let base64 = dataUrl[1];
     let mime = dataUrl[0].match(/:(.*?);/)[1];

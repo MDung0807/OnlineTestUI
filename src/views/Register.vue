@@ -253,7 +253,7 @@
 
   <script>
   import AuthService from "@/services/AuthService";
-    import getImage from "@/utils/GetImage";
+    import getImageUtil from "@/utils/GetImageUtil";
   import router from "@/router";
   export default {
     name: 'RegisterProj',
@@ -278,7 +278,7 @@
 
       },
       getAvatar(){
-        this.user.avatar = getImage(document.getElementById('avatar').__vnode.props)// note: [buf]
+        this.user.avatar = getImageUtil(document.getElementById('avatar').__vnode.props)// note: [buf]
       },
       reviewImage (){
         var image = document.getElementById("inputFile").valueOf()
