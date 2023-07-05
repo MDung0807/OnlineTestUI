@@ -13,6 +13,12 @@
     <button class="button is-primary" 
         type="submit"
         @click="getTopicByUser">Save change</button>
+    <router-view>
+        <router-link>
+            <button class="button is-primary"
+            type='button'>Next</button>
+        </router-link>
+    </router-view>
 </template>
 
 <script>

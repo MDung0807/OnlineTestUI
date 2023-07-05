@@ -11,6 +11,7 @@ import SubjectView from "@/components/SubjectView";
 import ProfileClient from '../views/ProfileClient.vue'
 import SubjectAdmin from '../views/admin/SubjectAdmin.vue'
 import HomeAdmin from '../views/admin/HomeAdmin.vue'
+import TopicAdmin from '../views/admin/TopicAdmin.vue'
 
 const routes= [
     {
@@ -63,6 +64,11 @@ const routes= [
       path: '/admin/addSubject',
       name: 'AddSubject',
       component: SubjectAdmin
+    },
+    {
+      path: '/admin/topics',
+      name: 'topicAdmin',
+      component: TopicAdmin
     }
 ]
 
