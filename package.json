@@ -19,7 +19,7 @@
     "sweetalert": "^2.1.2",
     "tw-elements": "^1.0.0-beta2",
     "vue": "^3.2.13",
-    "vue-router": "^4.2.1"
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
