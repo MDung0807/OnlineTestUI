@@ -12,6 +12,7 @@ import ProfileClient from '../views/ProfileClient.vue'
 import SubjectAdmin from '../views/admin/SubjectAdmin.vue'
 import HomeAdmin from '../views/admin/HomeAdmin.vue'
 import TopicAdmin from '../views/admin/TopicAdmin.vue'
+import chatApp from '../views/Chat.vue'
 
 const routes= [
     {
@@ -69,6 +70,11 @@ const routes= [
       path: '/admin/topics',
       name: 'topicAdmin',
       component: TopicAdmin
+    },
+    {
+      path: '/chat',
+      name: 'ChatApp',
+      component: chatApp
     }
 ]
 
