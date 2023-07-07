@@ -13,7 +13,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "axios": "^1.4.0",
     "bulma": "^0.9.4",
-    "core-js": "^3.8.3",
+    "core-js": "^3.31.0",
     "pug-loader": "^2.4.0",
     "require": "^2.4.20",
     "sweetalert": "^2.1.2",
