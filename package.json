@@ -11,7 +11,7 @@
     "@headlessui/vue": "^1.7.13",
     "@heroicons/vue": "^2.0.18",
     "@tailwindcss/forms": "^0.5.3",
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "bulma": "^0.9.4",
     "core-js": "^3.8.3",
     "pug-loader": "^2.4.0",
